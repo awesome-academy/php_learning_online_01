@@ -143,4 +143,18 @@ return [
 
     'attributes' => [],
 
+    'Home' => 'Home',
+    'Name' => 'Name',
+    'Login' => 'Login',
+    'Register' => 'Register',
+    'Password' => 'Password',
+    'E-Mail_Address' => 'E-Mail Address',
+    'Address' => 'Address',
+    'Remember_Me' => 'Remember Me',
+    'Forgot' => 'Forgot',
+    'Reset' => 'Reset',
+    'Confirm_Password' => 'Confirm Password',
+    'Dashboard' => 'Dashboard',
+    'You_are_logged_in!' => 'You are logged in!',
+    'Send_Password_Reset_Link' => 'Send Password Reset Link',
 ];
