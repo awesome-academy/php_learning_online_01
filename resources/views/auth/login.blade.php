@@ -13,7 +13,7 @@
                             {!! Form::label('email', trans('validation.E-Mail_Address'), ['class' => 'col-sm-4 col-form-label text-md-right']) !!}
 
                             <div class="col-md-6">
-                                {!!Form::email('email', old('email'), ['class' => 'form-control' . ( $errors->has('email') ? ' is-invalid' : ''), 'id' => 'email' ])  !!}
+                                {!! Form::email('email', old('email'), ['class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''), 'id' => 'email' ]) !!}
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -27,7 +27,7 @@
                             {!! Form::label('password', trans('validation.Password'), ['class' => 'col-md-4 col-form-label text-md-right']) !!}
 
                             <div class="col-md-6">
-                                {!! Form::password('password', ['class' => 'form-control' . ( $errors->has('password') ? ' is-invalid' : ''), 'required' => 'required'])  !!}
+                                {!! Form::password('password', ['class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''), 'required' => 'required'])  !!}
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">

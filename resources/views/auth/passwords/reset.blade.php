@@ -8,16 +8,15 @@
                 <div class="card-header">{{ trans('validation.Reset_Password') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('password.update') }}">
-                        @csrf
+                    {!! Form::open(['method' => 'POST', 'route' => 'password.update']) !!}
 
-                        <input type="hidden" name="token" value="{{ $token }}">
+                        {!! Form::hidden('token', $token) !!}
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ trans('validation.E-Mail_Address') }}</label>
+                            {!! Form::label('email', trans('validation.E-Mail_Address'), ['class' => 'col-md-4 col-form-label text-md-right']) !!}
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ $email ?? old('email') }}" required autofocus>
+                                {!! Form::email('email', $email ?? old('email'), ['class' => 'form-control' . ( $errors->has('email') ? ' is-invalid' : ''), 'id' => 'email', 'required' => 'required', 'autofocus' => 'autofocus']) !!}
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -28,10 +27,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            {!! Form::label('password', trans('validation.Password'), ['class' => 'col-md-4 col-form-label text-md-right']) !!}
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                {!! Form::password('password', ['class' => 'form-control' . $errors->has('password') ? ' is-invalid' : '', 'id' => 'password', 'required' => 'required'])  !!}
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
@@ -42,21 +41,19 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            {!! Form::label('password-confirm', trans('validation.Confirm_Password'), ['class' => 'col-md-4 col-form-label text-md-right']) !!}
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                {!! Form::password('password_confirmation', ['class' => 'awesome', 'id' => 'password-confirm', 'required' => 'required'])  !!}
                             </div>
                         </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Reset Password') }}
-                                </button>
+                                {!! Form::submit(trans('validation.Reset_Password'), ['class' => 'btn btn-primary']) !!}
                             </div>
                         </div>
-                    </form>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

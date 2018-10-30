@@ -4,21 +4,27 @@
     list-style: none;
 
 }
-li a{
+
+li a {
     color: #1b1e21;
 }
-li.homepage{
+
+.homepage {
     margin-right: 15px;
 }
-li.homepage a{
+
+.homepage a {
     color: #030303;
 }
-#logout-form{
+
+#logout-form {
     display: none;
 }
-. menu-left{
+
+.menu-left {
     float: left;
 }
-main.py-4{
+
+main.py-4 {
     margin-top: 70px
 }

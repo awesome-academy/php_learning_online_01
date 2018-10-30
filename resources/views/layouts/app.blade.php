@@ -37,22 +37,31 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <div class="top-center links nav navbar-nav">
-                    <li class="{{@$navact == '/index.php/course' ? 'active' : ''}}"><a href="#">{{ trans('validation.Courses')}}</a></li>
-                    <li class="{{@$navact == '/index.php/teacher' ? 'active' : ''}}"><a href="#">{{ trans('validation.Teacher')}}</a></li>
-                    <li class="{{@$navact == '/index.php/promotion' ? 'active' : ''}}"><a href="#">{{ trans('validation.Promotion')}}</a></li>
-                    <li class="{{@$navact == '/index.php/tutorial' ? 'active' : ''}}"><a href="#">{{ trans('validation.Advisory')}}</a></li>
+                    <li class="{{ @$navact == '/index.php/course' ? 'active' : '' }}">
+                        <a href="#">{{ trans('validation.Courses') }}</a>
+                    </li>
+                    <li class="{{ @$navact == '/index.php/teacher' ? 'active' : '' }}">
+                        <a href="#">{{ trans('validation.Teacher') }}</a>
+                    </li>
+                    <li class="{{ @$navact == '/index.php/promotion' ? 'active' : '' }}">
+                        <a href="#">{{ trans('validation.Promotion') }}</a>
+                    </li>
+                    <li class="{{ @$navact == '/index.php/tutorial' ? 'active' : '' }}">
+                        <a href="#">{{ trans('validation.Advisory') }}</a>
+                    </li>
                 </div>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     @guest
-                        <li class="nav-item {{@$navact == '/index.php/login' ? 'active' : ''}}">
+                        <li class="nav-item {{ @$navact == '/index.php/login' ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('login') }}">{{ trans('validation.Login') }}</a>
                         </li>
-                        <li class="nav-item {{@$navact == '/index.php/register' ? 'active' : ''}}">
+                        <li class="nav-item {{ @$navact == '/index.php/register' ? 'active' : '' }}">
                             @if (Route::has('register'))
-                                <a class="nav-link" href="{{ route('register') }}">{{  trans('validation.Register') }}</a>
+                                <a class="nav-link"
+                                   href="{{ route('register') }}">{{  trans('validation.Register') }}</a>
                             @endif
                         </li>
                     @else
@@ -68,9 +77,8 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ trans('validation.Logout') }}
                                 </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                                    @csrf
-                                </form>
+                                {!! Form::open(['method' => 'POST', 'route' => 'logout', 'id' => 'logout-form']) !!}
+                                {!! Form::close() !!}
                             </div>
                         </li>
                     @endguest

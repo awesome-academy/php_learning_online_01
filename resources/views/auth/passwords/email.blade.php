@@ -13,14 +13,12 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                         {!! Form::open(['method' => 'POST', 'routes' => 'password.email']) !!}
-
                         <div class="form-group row">
                             {!! Form::label('email', trans('validation.E-Mail_Address'), ['class' => 'col-md-4 col-form-label text-md-right']) !!}
 
                             <div class="col-md-6">
-                                {!!Form::email('email', old('email'), ['class' => 'form-control' . ( $errors->has('email') ? ' is-invalid' : ''), 'required' => 'required', 'id' => 'email' ])  !!}
+                                {!! Form::email('email', old('email'), ['class' => 'form-control' . ( $errors->has('email') ? ' is-invalid' : ''), 'required' => 'required', 'id' => 'email' ]) !!}
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -32,7 +30,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                {!! Form::submit(trans('Send_Password_Reset_Link'), ['class' => 'btn btn-primary']) !!}
+                                {!! Form::submit(trans('validation.Send_Password_Reset_Link'), ['class' => 'btn btn-primary']) !!}
                             </div>
                         </div>
                         {!! Form::close() !!}

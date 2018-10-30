@@ -7,9 +7,6 @@
 
     <title>Laravel</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-
     <!-- Styles -->
     <link href="{{ asset('css/all.css') }}" rel="stylesheet">
 
@@ -20,24 +17,38 @@
         @if (Route::has('login'))
             <div class="top-right links nav navbar-nav">
                 @auth
-                    <a href="{{ url('/home') }}">Home</a>
+                    <a href="{{ url('/home') }}">
+                        {{ trans('validation.Home') }}
+                    </a>
                 @else
-                    <a href="{{ route('login') }}">Login</a>
-                    <a href="{{ route('register') }}">Register</a>
+                    <a href="{{ route('login') }}">
+                        {{ trans('validation.Login') }}
+                    </a>
+                    <a href="{{ route('register') }}">
+                        {{ trans('validation.Register') }}
+                    </a>
                 @endauth
             </div>
         @endif
     </div>
     <div class="content">
         <div class="title m-b-md">
-            {{ trans('validation.training_online')}}
+            {{ trans('validation.training_online') }}
         </div>
 
         <div class="links">
-            <a href="#">{{ trans('validation.Courses')}}</a>
-            <a href="#">{{ trans('validation.Teacher')}}</a>
-            <a href="#">{{ trans('validation.Promotion')}}</a>
-            <a href="#">{{ trans('validation.Advisory')}}</a>
+            <a href="#">
+                {{ trans('validation.Courses') }}
+            </a>
+            <a href="#">
+                {{ trans('validation.Teacher') }}
+            </a>
+            <a href="#">
+                {{ trans('validation.Promotion') }}
+            </a>
+            <a href="#">
+                {{ trans('validation.Advisory') }}
+            </a>
         </div>
     </div>
 </div>

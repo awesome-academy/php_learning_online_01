@@ -28,7 +28,7 @@
                             {!! Form::label('email', trans('validation.E-Mail_Address'), ['class' => 'col-sm-4 col-form-label text-md-right']) !!}
 
                             <div class="col-md-6">
-                                {!!Form::email('email', old('email'), ['class' => 'form-control' . ( $errors->has('email') ? ' is-invalid' : ''), 'id' => 'email' ])  !!}
+                                {!! Form::email('email', old('email'), ['class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : ''), 'id' => 'email' ]) !!}
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
