@@ -1,0 +1,30 @@
+* {
+    font-size: 18px !important;
+    color: #1b1e21;
+    list-style: none;
+
+}
+
+li a {
+    color: #1b1e21;
+}
+
+.homepage {
+    margin-right: 15px;
+}
+
+.homepage a {
+    color: #030303;
+}
+
+#logout-form {
+    display: none;
+}
+
+.menu-left {
+    float: left;
+}
+
+main.py-4 {
+    margin-top: 70px
+}
